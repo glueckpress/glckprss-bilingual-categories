@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: GlückPress Bilingual Categories
+ * Plugin Name: The Bilingual Categories Hack
  * Plugin URI: https://github.com/glueckpress/glckprss-bilingual-categories
  * Description: Relabels default categories as “languages” and makes them available on pages. Reloads default textdomain in the front-end when current category is “de”.
  * Author: Caspar Hübinger

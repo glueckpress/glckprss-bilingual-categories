@@ -1,4 +1,4 @@
-# GlückPress Bilingual Categories
+# The Bilingual Categories Hack
 
 Relabels default categories as “languages” and makes them available on pages.
 
@@ -35,6 +35,7 @@ If you don’t know how to install a plugin for WordPress, leave now.
 * There is no settings page.
 * The plugin requires the default category to be `en` and an alternate one to be `de`.
 * You can hack this to modify settings.
+* There might occur a severe performance load if you try to add more than 1 secondary languade (primary=English) and then switch from one secondary language to the other.
 
 ## Changelog
 

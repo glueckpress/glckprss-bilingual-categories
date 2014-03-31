@@ -24,6 +24,7 @@ class GlckPress_Label_Categories {
 	public function __construct() {
 
 		add_action( 'init', array( $this, 'category_labels' ) );
+		add_action( 'init', array( $this, 'category_post_types' ) );
 		add_action( 'admin_init', array( $this, 'edit_screen' ) );
 		add_filter( 'template_redirect', array( $this, 'reload_textdomain' ) );
 	}
@@ -73,8 +74,20 @@ class GlckPress_Label_Categories {
 		);
 
 		$wp_taxonomies['category']->label = 'Languages';
+	}
 
-		// Apply categories to posts and pages by default.
+
+
+	/**
+	 * Enable categories for posts and pages.
+	 *
+	 * @access public
+	 * @return void
+	 */
+	public function category_post_types() {
+
+		global $wp_taxonomies;
+
 		$wp_taxonomies['category']->object_type = array( 'post', 'page' );
 	}
 

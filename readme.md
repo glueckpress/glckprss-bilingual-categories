@@ -11,7 +11,7 @@ This plugin is a hack. It requires that you set up your categories in WordPress 
 
 It then
 
-* relabels categories as languages
+* relabels categories as languages (props @janfabry!)
 * makes them available on pages
 * when the current category is `de`:
     * sets locale to de_DE
@@ -34,8 +34,12 @@ If you don’t know how to install a plugin for WordPress, leave now.
 
 * There is no settings page.
 * The plugin requires the default category to be `en` and an alternate one to be `de`.
-* You can hack this to modify settings.
-* There might occur a severe performance load if you try to add more than 1 secondary languade (primary=English) and then switch from one secondary language to the other.
+* You can hack glckprss-bilingual-categories.php to modify settings.
+* There might occur a performance load if you try to add more than 1 secondary language (primary=English) and then switch from one secondary language to the other.
+
+## To Do
+
+* Add a settings page if anything.
 
 ## Changelog
 

@@ -47,6 +47,9 @@ class GlckPress_Label_Categories {
 	/**
 	 * Relabel categories.
 	 *
+	 * Props @jan_fabry
+	 * @link http://wordpress.stackexchange.com/a/4188/23011
+	 *
 	 * @access public
 	 * @return void
 	 */

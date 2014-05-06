@@ -4,7 +4,7 @@
  * Plugin URI: https://github.com/glueckpress/glckprss-bilingual-categories
  * Description: Relabels default categories as “languages” and makes them available on pages. Reloads default textdomain in the front-end when current category is “de”.
  * Author: Caspar Hübinger
- * Version: 2014.01
+ * Version: 2014.02
  * Author URI: http://glueckpress.com
  * License: GNU General Public License v2 or later
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -12,7 +12,13 @@
 
 defined( 'ABSPATH' ) OR exit;
 
-class GlckPress_Label_Categories {
+
+/**
+ * GlckPress_Bilingual_Categories class.
+ *
+ * @since 2014.02
+ */
+class GlckPress_Bilingual_Categories {
 
 
 	/**
@@ -20,6 +26,7 @@ class GlckPress_Label_Categories {
 	 *
 	 * @access public
 	 * @return void
+	 * @since 2014.01
 	 */
 	public function __construct() {
 
@@ -35,6 +42,7 @@ class GlckPress_Label_Categories {
 	 *
 	 * @access public
 	 * @return void
+	 * @since 2014.01
 	 */
 	public function edit_screen() {
 
@@ -52,6 +60,7 @@ class GlckPress_Label_Categories {
 	 *
 	 * @access public
 	 * @return void
+	 * @since 2014.01
 	 */
 	public function category_labels() {
 
@@ -86,6 +95,7 @@ class GlckPress_Label_Categories {
 	 *
 	 * @access public
 	 * @return void
+	 * @since 2014.01
 	 */
 	public function category_post_types() {
 
@@ -101,6 +111,7 @@ class GlckPress_Label_Categories {
 	 * @access public
 	 * @param mixed $columns
 	 * @return string
+	 * @since 2014.01
 	 */
 	public function manage_columns( $columns ) {
 
@@ -119,6 +130,7 @@ class GlckPress_Label_Categories {
 	 * @param mixed $original
 	 * @param mixed $domain
 	 * @return string
+	 * @since 2014.01
 	 */
 	public function dropdown_label( $translated, $original, $domain ) {
 
@@ -145,6 +157,7 @@ class GlckPress_Label_Categories {
 	 * @access public
 	 * @param mixed $locale
 	 * @return string
+	 * @since 2014.01
 	 */
 	public function set_locale( $locale ) {
 
@@ -167,21 +180,21 @@ class GlckPress_Label_Categories {
 	 *
 	 * @access public
 	 * @return void
+	 * @since 2014.01
 	 */
-	public function reload_textdomain() {
+	public function reload_textdomain() { // @todo Theme text domain??
 
 		add_filter( 'locale', array( $this, 'set_locale' ) );
 
 		if( ! is_admin() )
 			load_default_textdomain();
 	}
-
 }
 
 
 /* Load plugin. */
 function glckprss_categories_to_languages() {
 
-	new GlckPress_Label_Categories;
+	new GlckPress_Bilingual_Categories;
 }
 add_filter( 'plugins_loaded', 'glckprss_categories_to_languages' );

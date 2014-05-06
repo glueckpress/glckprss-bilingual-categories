@@ -55,6 +55,10 @@ If you don’t know how to install a plugin for WordPress, leave now.
 
 ## Changelog
 
+### 2014.02
+
+* Renamed class `GlckPress_Label_Categories` into `GlckPress_Bilingual_Categories`.
+
 ### 2014.01
 
-* Alpha Release
+* Alpha Release.

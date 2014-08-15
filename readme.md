@@ -17,16 +17,14 @@ It then
     * sets locale to de_DE
     * reloads the default textdomain in the front-end
 
-In order to reload your theme’s textdomain “on the fly” as well, you would currently need to hook your call of `load_theme_textdomain` to the `template_redirect` hook separately from your theme. Try putting something like this in your theme’s functions.php:
+In order to reload your theme’s textdomain “on the fly” as well, you would currently need to hook your call of `load_theme_textdomain` to the `glckPress_bilingual_categories__reload_textdomain` hook. Try putting something like this in your theme’s functions.php:
 
 ```
 function yourprefix_load_textdomain() {
 
-	return load_theme_textdomain( 'your_theme_textdomain', 'your_theme_language_subdir' );
+	load_theme_textdomain( 'your_theme_textdomain', 'your_theme_language_subdir' );
 }
-
-if( class_exists( 'GlckPress_Bilingual_Categories' ) )
-	add_filter( 'template_redirect', 'yourprefix_load_textdomain' );
+add_action( 'glckPress_bilingual_categories__reload_textdomain', 'yourprefix_load_textdomain' );
 ```
 
 **Feel free to use, but know what you’re doing!**
@@ -54,6 +52,10 @@ If you don’t know how to install a plugin for WordPress, leave now.
 * Add a settings page if anything.
 
 ## Changelog
+
+### 2014.03
+
+* Added action hook `glckPress_bilingual_categories__reload_textdomain`.
 
 ### 2014.02
 

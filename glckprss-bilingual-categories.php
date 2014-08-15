@@ -4,7 +4,7 @@
  * Plugin URI: https://github.com/glueckpress/glckprss-bilingual-categories
  * Description: Relabels default categories as “languages” and makes them available on pages. Reloads default textdomain in the front-end when current category is “de”.
  * Author: Caspar Hübinger
- * Version: 2014.02
+ * Version: 2014.03
  * Author URI: http://glueckpress.com
  * License: GNU General Public License v2 or later
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -186,8 +186,12 @@ class GlckPress_Bilingual_Categories {
 
 		add_filter( 'locale', array( $this, 'set_locale' ) );
 
-		if( ! is_admin() )
+		if( ! is_admin() ) {
+
 			load_default_textdomain();
+
+			do_action( 'glckPress_bilingual_categories__reload_textdomain' );
+		}
 	}
 }
 
